@@ -1,59 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import EmartButton from './assets/components/EmartButton';
+import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+
+import styled from 'styled-components/native';
+import BottomMenus from './assets/components/BottomMenus';
+import MainSection from './assets/components/MainSection';
+import TopMenus from './assets/components/TopMenus';
+
+const EmartContainer = styled.View`
+  width: 100%;
+  flex: 1;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Header</Text>
-        <Text style={styles.title}>title</Text>
-      </View>
-      <View style={styles.section}>
-        <Text style={styles.title}>Section</Text>
-        <EmartButton name="Click" />
-      </View>
-      <View style={styles.footer}>
-        <Text style={styles.title}>Footer</Text>
-      </View>
+    <EmartContainer>
+      <TopMenus />
+      <MainSection />
+      <BottomMenus />
       <StatusBar style="auto" />
-    </View>
+    </EmartContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    flex: 1,
-    flexDirection: 'row',
-    width: '100%',
-    backgroundColor: '#f1c40f',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  section: {
-    width: '100%',
-    flex: 7,
-    backgroundColor: '#1abc9c',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  footer: {
-    flex: 2,
-    width: '100%',
-    backgroundColor: '#3498db',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 20,
-    color: '#fff',
-  },
-  
-});
