@@ -1,4 +1,5 @@
-import { Dimensions, Platform } from "react-native";
+import { useState } from "react";
+import { Dimensions, Platform, useWindowDimensions } from "react-native";
 import styled from "styled-components/native";
 
 const SearchInput = styled.TextInput`
@@ -14,17 +15,27 @@ const SearchInput = styled.TextInput`
   box-sizing: border-box;
 `;
 
+// 여기서 placeholder와 getData를 준 것은 디폴트 값이라고 생각할 수 있다.
+const EmartInputUi = ({ placeholder="검색어를 입력하세요.", getData = () => console.log('not f') }) => {
 
-const EmartInputUi = () => {
+  //const width = Dimensions.get('window').width;
+  const width = useWindowDimensions().width;
 
-  const width = Dimensions.get('window').width;
-  console.log(Platform.OS, width);
+  const[searchText, setSearchText] = useState('');
+  const onChange = (e) => {
+    setSearchText(e.nativeEvent.text);
+  }
 
   return (
     <SearchInput 
       width={width}
-      placeholder="검색어를 입력하세요."
+      placeholder={placeholder}
       maxLength={20}
+      autoCapitalize="none"
+      autoCorrect={false}
+      returnKeyType="search"
+      onChange={onChange}
+      onSubmitEditing={()=>getData(searchText)}
     />
   );
 }
