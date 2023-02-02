@@ -8,7 +8,7 @@ const Ebutton = ({ title, onPress }) => {
       backgroundColor: '#222',
       width: 200,
       height: 50,
-      borderRadious: 30,
+      borderRadius: 30,
     },
 
     myBtnTitle: {
