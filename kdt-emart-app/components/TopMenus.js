@@ -31,7 +31,7 @@ const TopMenus = () => {
       <TopHeaderWrapper>
         <TopBodyWrapper>
           <EmartLogo 
-            source={ require('./../../assets/logo.png') }
+            source={ require('../assets/logo.png') }
           />
         </TopBodyWrapper>
       </TopHeaderWrapper>

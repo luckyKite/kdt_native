@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import styled from 'styled-components/native';
-import BottomMenus from './assets/components/BottomMenus';
-import MainSection from './assets/components/MainSection';
-import TopMenus from './assets/components/TopMenus';
+import BottomMenus from './components/BottomMenus';
+import MainSection from './components/MainSection';
+import TopMenus from './components/TopMenus';
 
 const EmartContainer = styled.View`
   width: 100%;
