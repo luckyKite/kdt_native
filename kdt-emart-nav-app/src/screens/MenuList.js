@@ -1,52 +1,57 @@
 import React from 'react';
 import { Button } from 'react-native';
-
 import styled from 'styled-components/native';
-
-const Menu = [
-  {
-    id: 1,
-    name: 'Snack',
-    path: 'snack',
-  },
-  {
-    id: 2,
-    name: 'Drink',
-    path: 'drink',
-  },
-  {
-    id: 3,
-    name: 'Food',
-    path: 'food',
-  },
-]
 
 const Container = styled.View`
   flex: 1;
-  justify-content: center;
+  background-color: #fff;
   align-items: center;
+  justify-content: center;
+
 `;
 
-const ListTitle = styled.Text`
-  font-size: 24px;
-  margin: 10px 0;
+const Title = styled.Text`
+  font-size: 30px;
+  font-weight: bold;
+  color: #2c2c2c;
 `;
 
-const handleClick = item => {
-  console.log(item);
-}
+const MenuData = [
+  {
+    id: 1,
+    name: '아메리카노',
+    price: 3000,
+    description: '아메리카노 설명',
+  },
+  {
+    id: 2,
+    name: '카페라떼',
+    price: 4000,
+    description: '카페라떼 설명',
+  },
+  {
+    id: 3,
+    name: '카푸치노',
+    price: 5000,
+    description: '카푸치노 설명',
+  },
+]
 
-const MenuList = () => {
+const MenuList = ({navigation, route}) => {
   return (
     <Container>
-      <ListTitle>Menu List</ListTitle>
+      <Title>{route.name}</Title>
       {
-        Menu.map( item => (
-          <Button title={item.name} key={item.id} onPress={handleClick}/>
+        MenuData.map( menu => (
+          <Button 
+            title={menu.name}
+           key={menu.id} 
+           onPress={()=> navigation.navigate('MenuDetail',{menu})}
+          />
         ))
       }
     </Container>
-  );
+  )
 }
 
 export default MenuList;
