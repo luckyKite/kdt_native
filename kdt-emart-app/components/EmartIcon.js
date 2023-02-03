@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
 
 const IconWrapper = styled.TouchableOpacity`
-  width: 100%;
-  height: 100%;
+  //width: 100%;
+  //height: 100%;
 `;
 
 const IconImage = styled.Image`
