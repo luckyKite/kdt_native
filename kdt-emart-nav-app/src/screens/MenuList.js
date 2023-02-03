@@ -45,8 +45,8 @@ const MenuList = ({navigation, route}) => {
         MenuData.map( menu => (
           <Button 
             title={menu.name}
-           key={menu.id} 
-           onPress={()=> navigation.navigate('MenuDetail',{menu})}
+            key={menu.id} 
+            onPress={()=> navigation.navigate('MenuDetail',{menu})}
           />
         ))
       }

@@ -16,12 +16,13 @@ const Title = styled.Text`
   color: #2c2c2c;
 `;
 
-const MenuDetail = ({navigate, route}) => {
-  console.log(navigate,route);
+const MenuDetail = ({navigate, route, menu}) => {
+  console.log(navigate,route, menu);
   return (
     <Container>
       <Title>{route.params.menu.name}</Title>
-      <Text>{route.params.menu.price}</Text>
+      <Text>ID : {route.params.menu.id}</Text>
+      <Text>{route.params.menu.price} 원</Text>
       <Text>{route.params.menu.description}</Text>
     </Container>
   )
