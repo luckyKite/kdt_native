@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Modal, View, Pressable, Text } from "react-native";
 import styled from "styled-components/native";
+import EmartButton from "./EmartButton";
 import EmartInputUi from "./EmartInputUi";
 
 const MainScrollWrapper = styled.ScrollView`
@@ -50,7 +51,7 @@ const MainSection = () => {
       >
         <ModalView>
           <Pressable onPress={()=> setModalIsView(false)}>
-            <Text style={{color: '#fff'}}>Close</Text>
+            <EmartButton name="닫기" />
           </Pressable>
         </ModalView>
       </Modal>
