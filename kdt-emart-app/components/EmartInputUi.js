@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Dimensions, Platform, useWindowDimensions } from "react-native";
 import styled from "styled-components/native";
 
@@ -20,11 +20,16 @@ const EmartInputUi = ({ placeholder="검색어를 입력하세요.", getData = (
 
   //const width = Dimensions.get('window').width;
   const width = useWindowDimensions().width;
-
+  const inputRef = useRef();
   const[searchText, setSearchText] = useState('');
   const onChange = (e) => {
     setSearchText(e.nativeEvent.text);
   }
+
+  useEffect( () => {    
+    inputRef.current.focus();
+  },[])
+
 
   return (
     <SearchInput 
@@ -36,6 +41,7 @@ const EmartInputUi = ({ placeholder="검색어를 입력하세요.", getData = (
       returnKeyType="search"
       onChange={onChange}
       onSubmitEditing={()=>getData(searchText)}
+      ref={inputRef}
     />
   );
 }

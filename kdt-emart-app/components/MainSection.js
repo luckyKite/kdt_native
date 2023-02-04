@@ -4,6 +4,7 @@ import styled from "styled-components/native";
 import EmartButton from "./EmartButton";
 import EmartInputUi from "./EmartInputUi";
 import ProductList from "./widgets/ProductList";
+import { useFetch } from "./customHooks/useFetch";
 
 const MainScrollWrapper = styled.ScrollView`
   width: 100%;
@@ -27,14 +28,18 @@ const MainSection = () => {
 
   const [data, setData] = useState();
   //useState(true)로 바꾸면 모달창이 자동으로 뜬다.
-  const [modalIsView, setModalIsView] = useState(true);
+  const [modalIsView, setModalIsView] = useState(false);
 
   const getData = async (searchText) => {
-    const response = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-    const json = await response.json();
-    setData(json.products);
-    console.log(json);
 
+    const gData = useFetch(`/products/search?q=${searchText}`)
+    console.log("gData", gData)
+
+    // const response = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+    // const json = await response.json();
+    // setData(json.products);
+    // console.log(json);
+    
     //setData(searchText);
     //setModalIsView(true);
     console.log("Search Data", searchText)

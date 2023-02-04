@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import { Text } from "react-native";
 import { BottomIconData } from './datas/BottomIconData';
 import EmartIcon from './EmartIcon';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const BottomMenuWrapper = styled.View`
   width: 100%;

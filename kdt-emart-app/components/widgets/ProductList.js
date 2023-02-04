@@ -8,6 +8,7 @@ const ProductListWrapper = styled.View`
   flex-wrap: wrap;
   justify-content:  space-between;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const ProductList = ({ data }) => {
