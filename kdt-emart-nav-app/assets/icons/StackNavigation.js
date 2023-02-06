@@ -7,14 +7,12 @@ import MenuDetail from '../screens/MenuDetail';
 import { createStackNavigator } from '@react-navigation/stack';
 import styled from 'styled-components/native';
 
-
 const HeaderLogo = styled.Image`
   width: 150px;
   height: 30px;
 `;
 
 const Stack = createStackNavigator();
-
 const BackArrow = styled.Image`
   width: 30px;
   height: 30px;
@@ -32,22 +30,21 @@ const StackNavigation = () => {
       screenOptions={{
         headerStyle: {
           backgroundColor: '#f3f3f3',
-          //borderBottomColor: '#ffffff',
-          //borderBottomWidth: 1,
+          // borderBottomColor: `#ffffff`,
+          // borderBottomWidth: 1,
           height: 120,
           shadowColor: '#222',
           shadowOffset: {
             width: 0,
             height: 5,
           },
-          shadowOpacity:0.2,
+          shadowOpacity: 0.2,
           shadowRadius: 4.65,
         },
         headerTintColor: '#ffb71b',
         headerTitleStyle: {
           fontWeight: 'bold',
           fontSize: 24,
-          letterSpacing: -1,
           color: '#222',
         },
         headerTitleAlign: 'center',
@@ -68,9 +65,9 @@ const StackNavigation = () => {
             };
             return (
               <MenuBtn 
-                source={require('../../assets/icons/menu.png')} 
+                source={require('../../assets/icons/sort.png')} 
                 style={style}
-                onPress={()=> alert('메뉴 버튼 클릭')}
+                onPress={()=>{alert('메뉴 버튼 클릭')}}
               />
             )
           },
@@ -91,28 +88,31 @@ const StackNavigation = () => {
       />
       <Stack.Screen 
         name='MenuList' 
-        component={MenuList} 
-        options={{
-          headerTitle: '메뉴 리스트',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            fontSize: 24,
-            letterSpacing: -1,
-            color: '#222',
-          },
-          headerBackTitleVisible: false,
-          headerBackImage: () => {
-            const style = {
-              marginRight: 10,
-              marginLeft: Platform.OS === 'ios' ? 10 : 0,
-            };
-            return (
-              <BackArrow source={require('../../assets/icons/left.png')} style={style}/>
-            );
+        component={MenuList}
+        options={
+          {
+            headerTitle: '메뉴 리스트',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize: 24,
+              letterSpacing: -1,
+              color: '#222',
+            },
+            headerBackTitleVisible: false,
+            headerBackImage: () => {
+              const style = {
+                marginRight: 10,
+                marginLeft: Platform.OS === 'ios' ? 10 : 0,
+              };
+              return (
+                <BackArrow source={require('../../assets/icons/left-circle.png')} style={style} />
+              );
+  
+            }
           }
-        }}
+        }
       />
-      <Stack.Screen name='MenuDetail' component={MenuDetail} 
+      <Stack.Screen name='MenuDetail' component={MenuDetail}
         options={({route}) => ({
           headerTitle: route.params.menu.name,
           headerBackTitleVisible: false,
