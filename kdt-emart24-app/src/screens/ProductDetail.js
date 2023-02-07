@@ -1,6 +1,6 @@
 import React from 'react';
+
 import styled from 'styled-components/native';
-import HomeStackNavigation from '../navigations/HomeNavigation';
 
 const Container = styled.View`
   flex: 1;
@@ -9,15 +9,17 @@ const Container = styled.View`
   justify-content: center;
 `;
 
-const ScreenTitle = styled.Text`
+const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
-  color: #333;
 `;
 
-const Home = () => {
+const ProductDetail = () => {
   return (
-    <HomeStackNavigation />
+    <Container>
+      <Title>ProductDetail Screen</Title>
+    </Container>
   )
 }
-export default Home;
+
+export default ProductDetail;
