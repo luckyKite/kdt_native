@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { Text } from 'react-native'; //native-web 쓰면 안됨!!!!
 import styled from 'styled-components/native';
 
 const Container = styled.View`
@@ -14,10 +14,15 @@ const Title = styled.Text`
   font-weight: bold;
 `;
 
-const ProductDetail = () => {
+const ProductDetail = (props) => {
+  console.log(props)
+
+  const productData = props.route.params.data;
+
   return (
     <Container>
-      <Title>ProductDetail Screen</Title>
+      <Title>{productData.title}</Title>
+      <Text>{productData.description}</Text>
     </Container>
   )
 }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components/native';
+import { Text } from 'react-native-web';
 import HomeStackNavigation from '../navigations/HomeNavigation';
 
 const Container = styled.View`
@@ -9,15 +10,12 @@ const Container = styled.View`
   justify-content: center;
 `;
 
-const ScreenTitle = styled.Text`
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-`;
 
-const Home = () => {
+const Home = (props) => {
+  console.log(props)
+
   return (
-    <HomeStackNavigation />
+      <HomeStackNavigation />
   )
 }
 export default Home;

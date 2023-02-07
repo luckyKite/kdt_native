@@ -20,8 +20,21 @@ export const stackMainData = [
   }
 ]
 
+export const stackMainCenterData = [
+  {
+    id: 1,
+    data: [
+      {
+        id: 1,
+        name: 'Main',
+        source: require('../../assets/logo.png'),
+      }
+    ]
+  }
+]
+
 const stackMainLeftData = [
 ]
 
-const stackMainRgightData = [
+const stackMainRightData = [
 ]

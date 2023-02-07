@@ -22,11 +22,12 @@ const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
+    initialRouteName='Home'
+      screenOptions={({route}) => ({
         tabBarShowLabel: false,
-        tabBarStyle: { backgroundColor: '#abcdef' },
+        tabBarStyle: { backgroundColor: '#abcdef', borderTop: 'none', paddingTop: 14, paddingBottom: 14, boxSizing: 'border-box', height: 70 },
         height: 80,
-      }}
+      })}
     >
       {
         BottomIconData.map( data => (
